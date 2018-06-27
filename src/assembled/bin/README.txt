@@ -1,0 +1,1 @@
+Intended for executable binary files.

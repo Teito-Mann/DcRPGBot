@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:complexType name="loginTemplate">
+    <xs:sequence>
+      <xs:element name="daemon" type="xs:boolean"/>
+      <xs:element name="initialActivity" type="activityType" minOccurs="0"/>
+      <xs:element name="initialStatus" type="statusType" minOccurs="0"/>
+      <xs:element name="initialText" type="xs:string" minOccurs="0"/>
+      <xs:element name="maxMessageCacheCount" type="xs:int"/>
+      <xs:element name="maxReconnectAttempts" type="xs:int"/>
+      <xs:element name="numberOf5xxRetries" type="xs:int"/>
+      <xs:element name="pingTimeOut" type="xs:int"/>
+      <xs:element name="shardCount" type="xs:int"/>
+      <xs:element name="token" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="activityType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PLAYING"/>
+      <xs:enumeration value="STREAMING"/>
+      <xs:enumeration value="LISTENING"/>
+      <xs:enumeration value="WATCHING"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="statusType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ONLINE"/>
+      <xs:enumeration value="DND"/>
+      <xs:enumeration value="IDLE"/>
+      <xs:enumeration value="INVISIBLE"/>
+      <xs:enumeration value="OFFLINE"/>
+      <xs:enumeration value="UNKNOWN"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>
+
